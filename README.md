@@ -4,7 +4,7 @@ Using SQS as an event source, trigger a Lambda function to perform image analysi
 
 
 
-##Using SQS as an event source to trigger Lambda
+## Using SQS as an event source to trigger Lambda
 
 This repository contains an AWS Lambda function that uses SQS as an event source.
 
@@ -12,20 +12,20 @@ This repository contains an AWS Lambda function that uses SQS as an event source
 - Image name is written to a SQS queue
 - The SQS message triggers a Lambda function
 - Lambda invokes Rekognition APIs for celebrity and text detection on that image
-- Lambda writes the output to a DynamoDB table.
+- Lambda writes the output to a DynamoDB table.  
 
-###Prerequisites
+### Prerequisites
 - An AWS Account with permissions to IAM, CloudFormation, S3, SQS, Lambda, Rekognition, and DynamoDB.
 - Install AWS CLI and configure the credentials.
-- Git client
+- Git client  
 
-###Steps to deploy this application
+### Steps to deploy this application
 Please note:   
 a. We will be using the us-east-2 region (Ohio) for deploying this application.  
 b. User-specified input parameters will be marked with curly braces in the following instructions. For e.g., {s3-bucket-name} will need to be replaced with a bucket name of your choice, such as mybucketname etc.  
 
 
-####Steps
+#### Steps
 1. Clone this repo and change to the directory 'rekognition-sqs'.  
   
 2. Create a SQS queue for publishing the image name. Set the VisibilityTimeout attribute to 3000 seconds. Note down the queue name to be used in step 5 below.  
